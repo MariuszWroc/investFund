@@ -15,13 +15,12 @@ import org.hibernate.criterion.Projections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
-import pl.mariuszczarny.slask.dao.IGenericExtendedDao;
 
 /**
  *
  * @author Mariusz
  */
-public abstract class GenericDao<T> implements IGenericExtendedDao<T>, IGenericDao<T> {
+public abstract class GenericDao<T> implements IGenericDao<T> {
 
     @Autowired
     private SessionFactory sessionFactory;
