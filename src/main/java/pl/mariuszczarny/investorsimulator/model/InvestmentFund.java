@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package pl.mariuszczarny.investorsimulator.model.entity;
+package pl.mariuszczarny.investorsimulator.model;
 
+import pl.mariuszczarny.investorsimulator.model.AbstractEntity;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

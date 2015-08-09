@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package pl.mariuszczarny.investorsimulator.model.entity;
+package pl.mariuszczarny.investorsimulator.model;
 
 import java.io.Serializable;
 import javax.persistence.MappedSuperclass;
