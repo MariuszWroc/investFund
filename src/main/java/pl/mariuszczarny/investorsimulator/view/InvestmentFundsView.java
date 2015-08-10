@@ -24,6 +24,8 @@ public class InvestmentFundsView extends JPanel {
     private JButton sellButton;
     private JButton buyButton;
     private JPanel mainPanel;
+    private JSpinner unitSpinner;
+    private JTextField amountTextfield;
     
     public InvestmentFundsView(InvestmentFundsModel model) {
         this.model = model;
@@ -44,6 +46,8 @@ public class InvestmentFundsView extends JPanel {
 
         builder.append("Button2",   getBuyButton());          
         builder.append("Combobox", getFundTypesComboBox());
+        builder.append("Spinner", getUnitSpinner());
+        builder.append("Konto", getAmountTextfield());
 
         return builder.getPanel();
     }
@@ -72,8 +76,29 @@ public class InvestmentFundsView extends JPanel {
         return investFundComboBox;
     }
 
+    public JSpinner getUnitSpinner() {
+        if (unitSpinner == null) {
+            unitSpinner = new JSpinner(getModel().getSpinnerNumberModel());
+        }
+        return unitSpinner;
+    }
+
+    public JTextField getAmountTextfield() {
+        if (amountTextfield == null) {
+            amountTextfield = new JTextField(getModel().getAmountModel(), "1000", 1);
+        }
+        return amountTextfield;
+    }
+
     private static InvestFundTypeEnum[] fillInvestFundComboBox() {
         return InvestFundTypeEnum.values();
     }
 
+    public InvestmentFundsModel getModel() {
+        return model;
+    }
+
+    public void setModel(InvestmentFundsModel model) {
+        this.model = model;
+    }
 }

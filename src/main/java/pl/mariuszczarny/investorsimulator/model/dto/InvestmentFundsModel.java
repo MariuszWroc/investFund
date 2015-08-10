@@ -6,7 +6,9 @@
 
 package pl.mariuszczarny.investorsimulator.model.dto;
 
-import javax.swing.DefaultComboBoxModel;
+import javax.swing.*;
+import javax.swing.text.Document;
+import javax.swing.text.PlainDocument;
 
 /**
  *
@@ -14,11 +16,27 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class InvestmentFundsModel {
     private DefaultComboBoxModel documentComboBoxModel;
-    
-	public DefaultComboBoxModel getDocumentComboBoxModel() {
-		if (documentComboBoxModel == null){
-			documentComboBoxModel = new DefaultComboBoxModel();
-		}
-		return documentComboBoxModel;
-	}
+    private SpinnerNumberModel spinnerNumberModel;
+    private PlainDocument documentModel;
+
+    public DefaultComboBoxModel getDocumentComboBoxModel() {
+        if (documentComboBoxModel == null) {
+            documentComboBoxModel = new DefaultComboBoxModel();
+        }
+        return documentComboBoxModel;
+    }
+
+    public SpinnerNumberModel getSpinnerNumberModel() {
+        if (spinnerNumberModel == null) {
+            spinnerNumberModel = new SpinnerNumberModel();
+        }
+        return spinnerNumberModel;
+    }
+
+    public Document getAmountModel() {
+        if (documentModel == null) {
+            documentModel = new PlainDocument();
+        }
+        return documentModel;
+    }
 }

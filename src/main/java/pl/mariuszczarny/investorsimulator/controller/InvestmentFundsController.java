@@ -22,10 +22,10 @@ public class InvestmentFundsController {
     private InvestmentFundsView view;
     
     public InvestmentFundsController() {
-        initButtonListeners();
+        initListeners();
     }
 
-    private void initButtonListeners() {
+    private void initListeners() {
         initSellButtonListener();
         initBuyButtonListener();
     }

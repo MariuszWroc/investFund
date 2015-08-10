@@ -12,9 +12,11 @@ package pl.mariuszczarny.investorsimulator.util;
  */
 public enum ViewConstants {
     SELL_BUTTON("sprzedaj"), 
-    BUY_BUTTON("kupuj");
+    BUY_BUTTON("kupuj"),
+    INVESTMENT_FUND("Towarzystwo Funduszy Inwestycyjnych"),
+    FRAME_TITLE("nazwa okna");
     
-        private final String value;
+    private final String value;
     
     private ViewConstants(String value) {
         this.value = value;

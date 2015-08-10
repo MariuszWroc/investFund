@@ -10,6 +10,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import pl.mariuszczarny.investorsimulator.controller.InvestmentFundsController;
+import pl.mariuszczarny.investorsimulator.util.GlobalValues;
+import pl.mariuszczarny.investorsimulator.util.ViewConstants;
 
 /**
  *
@@ -32,8 +34,8 @@ public class MainFrame {
             @Override
             public void run() {
                 JFrame frame = new JFrame();
-                frame.setTitle("OKNO TESTOWE");
-                frame.setSize(300, 250);
+                frame.setTitle(ViewConstants.FRAME_TITLE.getValue());
+                frame.setSize(GlobalValues.FRAME_HEIGHT.getValues(), GlobalValues.FRAME_WEIGHT.getValues());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 JPanel panel = getController().getView().buildPanel();
                 frame.getContentPane().add(panel);
