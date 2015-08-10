@@ -38,6 +38,14 @@
             <version>2.1</version> 
         </dependency>
         
+        <!-- JGoodies -->
+        <dependency>
+            <groupId>jgoodies</groupId>
+            <artifactId>forms</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+
+        
         <!--  Spring 3 dependencies --> 
         <dependency>
             <groupId>org.springframework</groupId> 
