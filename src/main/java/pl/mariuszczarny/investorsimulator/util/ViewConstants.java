@@ -14,7 +14,8 @@ public enum ViewConstants {
     SELL_BUTTON("sprzedaj"), 
     BUY_BUTTON("kupuj"),
     INVESTMENT_FUND("Towarzystwo Funduszy Inwestycyjnych"),
-    FRAME_TITLE("nazwa okna");
+    FRAME_TITLE("nazwa okna"),
+    FUDS_TYPE("Wybierasz fundusz");
     
     private final String value;
     

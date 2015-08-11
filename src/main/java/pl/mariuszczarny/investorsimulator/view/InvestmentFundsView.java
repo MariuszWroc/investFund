@@ -39,13 +39,13 @@ public class InvestmentFundsView extends JPanel {
         DefaultFormBuilder builder = new DefaultFormBuilder(layout);
         builder.setDefaultDialogBorder();
 
-        builder.appendSeparator("Separator");
+        builder.appendSeparator(ViewConstants.INVESTMENT_FUND.getValue());
 
         builder.append("Button1", getSellButton());
         builder.nextLine();
 
         builder.append("Button2",   getBuyButton());          
-        builder.append("Combobox", getFundTypesComboBox());
+        builder.append(ViewConstants.FUDS_TYPE.getValue(), getFundTypesComboBox());
         builder.append("Spinner", getUnitSpinner());
         builder.append("Konto", getAmountTextfield());
 
@@ -86,6 +86,7 @@ public class InvestmentFundsView extends JPanel {
     public JTextField getAmountTextfield() {
         if (amountTextfield == null) {
             amountTextfield = new JTextField(getModel().getAmountModel(), "1000", 1);
+            amountTextfield.setEnabled(false);
         }
         return amountTextfield;
     }

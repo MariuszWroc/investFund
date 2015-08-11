@@ -6,6 +6,8 @@
 
 package pl.mariuszczarny.investorsimulator.model.dto;
 
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.*;
 import javax.swing.text.Document;
 import javax.swing.text.PlainDocument;
@@ -19,7 +21,7 @@ public class InvestmentFundsModel {
     private SpinnerNumberModel spinnerNumberModel;
     private PlainDocument documentModel;
 
-    public DefaultComboBoxModel getDocumentComboBoxModel() {
+    public DefaultComboBoxModel getDefaultComboBoxModel() {
         if (documentComboBoxModel == null) {
             documentComboBoxModel = new DefaultComboBoxModel();
         }
@@ -38,5 +40,12 @@ public class InvestmentFundsModel {
             documentModel = new PlainDocument();
         }
         return documentModel;
+    }
+
+    public Map<String, Object> getComboBoxAsMap() {
+        String fundsTypeItem = getDefaultComboBoxModel().getSelectedItem().toString();
+        Map<String, Object> mappedFundsTypeItem = new HashMap<String, Object>();
+        mappedFundsTypeItem.containsKey(fundsTypeItem);
+        return mappedFundsTypeItem;
     }
 }

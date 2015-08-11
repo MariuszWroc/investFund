@@ -11,9 +11,11 @@ package pl.mariuszczarny.investorsimulator.model;
  * @author mczarny
  */
 public enum InvestFundTypeEnum { 
-    ONE("ONE"), 
-    TWO("TWO"), 
-    THREE("THREE");
+    ONE("rynku pieniężnego"), 
+    TWO("obligacji"), 
+    THREE("stabilnego wzrostu"),
+    FOUR("zrównoważony"),
+    FIVE("akcji");
 
     private final String value;
 

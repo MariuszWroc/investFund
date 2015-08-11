@@ -6,10 +6,13 @@
 
 package pl.mariuszczarny.investorsimulator.service;
 
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author mczarny
  */
+@Service
 public class InvestmentFundsService {
     public static void add() {
         System.out.println("add");

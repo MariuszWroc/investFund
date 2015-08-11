@@ -12,15 +12,16 @@ package pl.mariuszczarny.investorsimulator.util;
  */
 public enum GlobalValues {
     FRAME_HEIGHT(300),
-    FRAME_WEIGHT(250);
+    FRAME_WEIGHT(250),
+    COMMISSION(2);
     
-    private final int values;
+    private final int value;
     
-    private GlobalValues(int values) {
-        this.values = values;
+    private GlobalValues(int value) {
+        this.value = value;
     }
-
-    public int getValues() {
-        return values;
+    
+    public int getValue() {
+        return value;
     }
 }

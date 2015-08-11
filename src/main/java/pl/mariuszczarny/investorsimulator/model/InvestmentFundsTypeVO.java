@@ -16,6 +16,7 @@ public class InvestmentFundsTypeVO {
 
     private Long id;
     private String description;
+    private Integer amount;
 
     public Long getId() {
         return id;
@@ -31,5 +32,13 @@ public class InvestmentFundsTypeVO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 }

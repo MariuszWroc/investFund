@@ -35,7 +35,7 @@ public class MainFrame {
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setTitle(ViewConstants.FRAME_TITLE.getValue());
-                frame.setSize(GlobalValues.FRAME_HEIGHT.getValues(), GlobalValues.FRAME_WEIGHT.getValues());
+                frame.setSize(GlobalValues.FRAME_HEIGHT.getValue(), GlobalValues.FRAME_WEIGHT.getValue());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 JPanel panel = getController().getView().buildPanel();
                 frame.getContentPane().add(panel);
