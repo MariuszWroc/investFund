@@ -6,11 +6,12 @@
 
 package pl.mariuszczarny.investorsimulator.view;
 
-import javax.swing.*;
-
 import com.jgoodies.forms.builder.DefaultFormBuilder;
 import com.jgoodies.forms.layout.FormLayout;
+import java.awt.Component;
+import javax.swing.*;
 import pl.mariuszczarny.investorsimulator.model.InvestFundTypeEnum;
+import pl.mariuszczarny.investorsimulator.model.InvestmentFundsTypeVO;
 import pl.mariuszczarny.investorsimulator.model.dto.InvestmentFundsModel;
 import pl.mariuszczarny.investorsimulator.util.ToolTipContants;
 import pl.mariuszczarny.investorsimulator.util.ViewConstants;
@@ -26,6 +27,12 @@ public class InvestmentFundsView extends JPanel {
     private JPanel mainPanel;
     private JSpinner unitSpinner;
     private JTextField amountTextfield;
+    private JRadioButton radioButtonTypeA;
+    private JRadioButton radioButtonTypeB;
+    private ButtonGroup radioButtonGroup;
+    private JTextField fundsValueTextfield;
+    private JTextField unitOfFundTextfield;
+    private InvestmentFundsTypeVO investmentFundsTypeVO;
     
     public InvestmentFundsView(InvestmentFundsModel model) {
         this.model = model;
@@ -48,6 +55,11 @@ public class InvestmentFundsView extends JPanel {
         builder.append(ViewConstants.FUDS_TYPE.getValue(), getFundTypesComboBox());
         builder.append("Spinner", getUnitSpinner());
         builder.append("Konto", getAmountTextfield());
+        builder.append("Wartość funduszu", getFundValueTextfield());
+        builder.append("Liczba jednostek", getUnitOfFundTextfield());
+        getRadioButtonGroup();
+        builder.append("Typ A", getRadioButtonTypeA());
+        builder.append("Typ B", getRadioButtonTypeB());
 
         return builder.getPanel();
     }
@@ -90,6 +102,45 @@ public class InvestmentFundsView extends JPanel {
         }
         return amountTextfield;
     }
+    
+    public JTextField getFundValueTextfield() {
+        if (fundsValueTextfield == null) {
+            fundsValueTextfield = new JTextField(getModel().getAmountModel(), "1000", 1);
+            fundsValueTextfield.setEnabled(false);
+        }
+        return fundsValueTextfield;
+    }
+    
+    public JRadioButton getRadioButtonTypeA() {
+        if (radioButtonTypeA == null) {
+            radioButtonTypeA = new JRadioButton();
+        }
+        return radioButtonTypeA;
+    }
+
+    public JRadioButton getRadioButtonTypeB() {
+        if (radioButtonTypeB == null) {
+            radioButtonTypeB = new JRadioButton();
+        }
+        return radioButtonTypeB;
+    }
+    
+    public ButtonGroup getRadioButtonGroup() {
+        if (radioButtonGroup == null) {
+            radioButtonGroup = new ButtonGroup();
+            radioButtonGroup.add(getRadioButtonTypeA());
+            radioButtonGroup.add(getRadioButtonTypeB());
+        }
+        return radioButtonGroup;
+    }
+    
+    public JTextField getUnitOfFundTextfield() {
+        if (unitOfFundTextfield == null) {
+            unitOfFundTextfield = new JTextField(getModel().getAmountModel(), "1000", 1);
+            unitOfFundTextfield.setEnabled(false);
+        }
+        return unitOfFundTextfield;
+    }
 
     private static InvestFundTypeEnum[] fillInvestFundComboBox() {
         return InvestFundTypeEnum.values();
@@ -101,5 +152,13 @@ public class InvestmentFundsView extends JPanel {
 
     public void setModel(InvestmentFundsModel model) {
         this.model = model;
+    }
+
+    public InvestmentFundsTypeVO getInvestmentFundsTypeVO() {
+        return investmentFundsTypeVO;
+    }
+
+    public void setInvestmentFundsTypeVO(InvestmentFundsTypeVO investmentFundsTypeVO) {
+        this.investmentFundsTypeVO = investmentFundsTypeVO;
     }
 }

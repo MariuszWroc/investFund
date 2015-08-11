@@ -23,6 +23,7 @@ public class InvestmentFundsController {
     
     public InvestmentFundsController() {
         initListeners();
+        Simulation firstSimulation = new Simulation();
     }
 
     private void initListeners() {

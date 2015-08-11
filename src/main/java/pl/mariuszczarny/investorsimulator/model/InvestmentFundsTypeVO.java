@@ -6,6 +6,8 @@
 
 package pl.mariuszczarny.investorsimulator.model;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author mczarny
@@ -14,15 +16,25 @@ public class InvestmentFundsTypeVO {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private Integer id;
     private String description;
-    private Integer amount;
+    private BigDecimal amount;
+    private BigDecimal minChangeValue;
+    private BigDecimal maxChangeValue;
 
-    public Long getId() {
+    public InvestmentFundsTypeVO(Integer id, String description, BigDecimal amount, BigDecimal minChangeValue, BigDecimal maxChangeValue) {
+        this.id = id;
+        this.description = description;
+        this.amount = amount;
+        this.minChangeValue = minChangeValue;
+        this.maxChangeValue = maxChangeValue;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -34,11 +46,28 @@ public class InvestmentFundsTypeVO {
         this.description = description;
     }
 
-    public Integer getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
+
+    public BigDecimal getMinChangeValue() {
+        return minChangeValue;
+    }
+
+    public void setMinChangeValue(BigDecimal minChangeValue) {
+        this.minChangeValue = minChangeValue;
+    }
+
+    public BigDecimal getMaxChangeValue() {
+        return maxChangeValue;
+    }
+
+    public void setMaxChangeValue(BigDecimal maxChangeValue) {
+        this.maxChangeValue = maxChangeValue;
+    }
+    
 }

@@ -6,6 +6,8 @@
 
 package pl.mariuszczarny.investorsimulator.model.dto;
 
+import pl.mariuszczarny.investorsimulator.model.UnitTypeEnum;
+
 /**
  *
  * @author mczarny
