@@ -16,7 +16,7 @@ import pl.mariuszczarny.investorsimulator.model.InvestmentFundsTypeVO;
  */
 public class Simulation {
     private InvestmentFundsTypeVO fundsTypeVO;
-        private final List<InvestmentFundsTypeVO> fundsList;
+    private final List<InvestmentFundsTypeVO> fundsList;
         
     public Simulation() {
         ManagedFunds managedFunds= new ManagedFunds();
@@ -25,10 +25,10 @@ public class Simulation {
 
     
     public void nextValues() {
-//managedFunds
+        populateRandom(fundsList);
     }
 
-    private void populateRandom(List<InvestmentFundsTypeVO> list) {
+    public void populateRandom(List<InvestmentFundsTypeVO> list) {
             for (InvestmentFundsTypeVO fund : list) {
                 final BigDecimal amount = fund.getAmount().add(
                         randomize(fund.getMinChangeValue(), fund.getMaxChangeValue()));
@@ -50,4 +50,6 @@ public class Simulation {
     public void setFundsTypeVO(InvestmentFundsTypeVO fundsTypeVO) {
         this.fundsTypeVO = fundsTypeVO;
     }
+    
+    
 }

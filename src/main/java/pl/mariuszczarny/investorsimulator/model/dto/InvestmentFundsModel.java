@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.swing.*;
 import javax.swing.text.Document;
 import javax.swing.text.PlainDocument;
+import pl.mariuszczarny.investorsimulator.controller.Simulation;
 
 /**
  *
@@ -20,6 +21,11 @@ public class InvestmentFundsModel {
     private DefaultComboBoxModel documentComboBoxModel;
     private SpinnerNumberModel spinnerNumberModel;
     private PlainDocument documentModel;
+    
+    public InvestmentFundsModel() {
+        Simulation firstSimulation = new Simulation();
+        firstSimulation.nextValues();
+    }
 
     public DefaultComboBoxModel getDefaultComboBoxModel() {
         if (documentComboBoxModel == null) {
@@ -35,7 +41,7 @@ public class InvestmentFundsModel {
         return spinnerNumberModel;
     }
 
-    public Document getAmountModel() {
+    public Document getTextfieldModel() {
         if (documentModel == null) {
             documentModel = new PlainDocument();
         }

@@ -97,7 +97,7 @@ public class InvestmentFundsView extends JPanel {
 
     public JTextField getAmountTextfield() {
         if (amountTextfield == null) {
-            amountTextfield = new JTextField(getModel().getAmountModel(), "1000", 1);
+            amountTextfield = new JTextField(getModel().getTextfieldModel(), "1000", 1);
             amountTextfield.setEnabled(false);
         }
         return amountTextfield;
@@ -105,7 +105,7 @@ public class InvestmentFundsView extends JPanel {
     
     public JTextField getFundValueTextfield() {
         if (fundsValueTextfield == null) {
-            fundsValueTextfield = new JTextField(getModel().getAmountModel(), "1000", 1);
+            fundsValueTextfield = new JTextField(getModel().getTextfieldModel(), "1000", 1);
             fundsValueTextfield.setEnabled(false);
         }
         return fundsValueTextfield;
@@ -136,7 +136,7 @@ public class InvestmentFundsView extends JPanel {
     
     public JTextField getUnitOfFundTextfield() {
         if (unitOfFundTextfield == null) {
-            unitOfFundTextfield = new JTextField(getModel().getAmountModel(), "1000", 1);
+            unitOfFundTextfield = new JTextField (getModel().getTextfieldModel(), "1000", 1);
             unitOfFundTextfield.setEnabled(false);
         }
         return unitOfFundTextfield;

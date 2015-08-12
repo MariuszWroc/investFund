@@ -23,7 +23,6 @@ public class InvestmentFundsController {
     
     public InvestmentFundsController() {
         initListeners();
-        Simulation firstSimulation = new Simulation();
     }
 
     private void initListeners() {
@@ -67,7 +66,7 @@ public class InvestmentFundsController {
         InvestmentFundsService.add();
     }
 
-    void onSellButtonAction() {
+    public void onSellButtonAction() {
         InvestmentFundsService.substract();
     }
 }

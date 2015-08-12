@@ -21,6 +21,9 @@ public class InvestmentFundsTypeVO {
     private BigDecimal amount;
     private BigDecimal minChangeValue;
     private BigDecimal maxChangeValue;
+    
+    public InvestmentFundsTypeVO() {
+    }
 
     public InvestmentFundsTypeVO(Integer id, String description, BigDecimal amount, BigDecimal minChangeValue, BigDecimal maxChangeValue) {
         this.id = id;
